@@ -1,23 +1,31 @@
-#include <conio.h>
-#include <stdio.h>
 #include <malloc.h>
-int main(int argc, const char *argv[]){
-	int n;
-	int i = 0, j = 0;
-	scanf("%d",&n);
-	int **a;
-	
-	a = (int**)malloc(n * sizeof(int*));
-	for (i = 0; i < n; i++) {
-		a[i] = (int*)malloc((i + 1) * sizeof(int));
-	}
-	for (i = 0; i<n; i++){
-		for (j = 0; j<n; j++){
-			a[i][j] = (i + 1)*(j + 1);
+#include <string.h>
+#include <stdio.h>
 
+int main(int argc, const char *argv[])
+{
+	int n;
+
+	scanf("%d", &n);
+	int i = 0, j = 0;
+
+	int **a ;
+	a= malloc(n*sizeof(int *));
+	for (i = 0; i < n; i++)
+	{
+		a[i] = malloc(n*sizeof(int));
+		for (j = 0; j < n; j++)
+		{
+			a[i][j] = (i + 1)*(j + 1);
 		}
 	}
-	int x1 = 1, x2, y1, y2;
+
+	int x1=1, y1, x2, y2;
+	char str[10];
+	//sprintf(str, "%d", a[n - 1][n - 1]);
+	//w = strlen(str) + 1;
+
+	//scanf("%d", &x1);
 	while (x1 != 0){
 		scanf("%d", &x1);
 		if (x1 == 0) break;
@@ -40,10 +48,12 @@ int main(int argc, const char *argv[]){
 		}
 
 	}
+
 	for (i = 0; i < n; i++)
 	{
 		free(a[i]);
 	}
 	free(a);
-	return(0);
+
+	return 0;
 }
