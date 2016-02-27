@@ -22,10 +22,7 @@ int main(int argc, const char *argv[])
 
 	int x1=1, y1, x2, y2;
 	char str[10];
-	//sprintf(str, "%d", a[n - 1][n - 1]);
-	//w = strlen(str) + 1;
 
-	//scanf("%d", &x1);
 	while (x1 != 0){
 		scanf("%d", &x1);
 		if (x1 == 0) break;
@@ -42,7 +39,7 @@ int main(int argc, const char *argv[])
 				}
 
 
-				printf("%\n", "");
+				printf("\n");
 			}
 
 		}
